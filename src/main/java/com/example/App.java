@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-/**
+/*
  * Hello world!
  *
  */
@@ -19,7 +19,7 @@ public class App
         String xml = inputStreamToString(new FileInputStream(file));
         try{
             root value=xmlMapper.readValue(file, root.class);
-            System.out.println("la classe "+value.getClasse()+" si trova nell'aula "+value.getAula());
+            System.out.println("la classe "+value.getClasse()+" si trova nell'aula "+value.getAula().getNome());
         } catch(JsonParseException e){
             e.printStackTrace();
         } catch(JsonMappingException e){
